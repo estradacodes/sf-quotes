@@ -4,7 +4,7 @@ let dbConnection
 
 module.exports = {
   connectToDb: (cb) => {
-    MongoClient.connect(`${process.env.MONGOURL}`)
+    MongoClient.connect(process.env.MONGOURL)
       .then((client) => {
         dbConnection = client.db('sfquotes')
         return cb()
